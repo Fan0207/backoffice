@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1>new article</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="id">id</label>
+                <input type="text" class="form-control" id="id" name="id" value="{{ formData.id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ formData.name }}">
+                {% if errors.name is defined %}
+                <div class="alert alert-danger" role="alert">
+                    {{ messages.name }}
+                </div>
+                {% endif %}
+            </div>
+             <div class="form-group">
+                <label for="description">description</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{ formData.description }}">
+                {% if errors.description is defined %}
+                <div class="alert alert-danger" role="alert">
+                    {{ messages.description }}
+                </div>
+                {% endif %}
+            </div>
+             <div class="form-group">
+                <label for="price">price</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{ formData.price }}">
+                {% if errors.price is defined %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ messages.price }}
+                </div>
+                {% endif %}
+            </div>
+             <div class="form-group">
+                <label for="quantity">quantity</label>
+                <input type="text" class="form-control" id="quantity" name="quantity" value="{{ formData.quantity }}">
+                {% if errors.quantity is defined %}
+                <div class="alert alert-danger" role="alert">
+                    {{ messages.quantity }}
+                </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
