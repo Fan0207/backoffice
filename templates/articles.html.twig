@@ -16,6 +16,7 @@
                 <th scope="col">name</th>
                 <th scope="col">price</th>
                 <th scope="col">quantity</th>
+                <th scope="col">quantity</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,10 @@
                 <td>{{ article.name }}</td>
                 <td>{{ article.price }}</td>
                 <td>{{ article.quantity }}</td>
+                <td>
+                    <a href="article-edit.php?id={{article.id}}">Modifier</a>
+                    <a href="article-delete.php?id={{article.id}}">Supprimer</a>
+                </td>
                 </tr>
                 {% endfor %}   
             </tbody>
